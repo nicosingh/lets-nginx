@@ -22,4 +22,7 @@ ADD templates /templates
 # There is an expose in nginx:alpine image
 # EXPOSE 80 443
 
+RUN mkdir -p /run/nginx && \
+  touch /run/nginx/nginx.pid
+
 ENTRYPOINT ["/opt/entrypoint.sh"]
